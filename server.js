@@ -1,26 +1,30 @@
-const express = require('express'); // importando Express en nuestro archivo
-const app = express(); //inicializando Express
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const authRoutes = require("./routes/authRoutes.js"); 
+const { sequelize } = require("./models");
+
+const app = express();
+
+app.use(cors({
+    origin: "http://localhost:5500", 
+    credentials: true,
+}));
 app.use(express.json());
-//Ruta principal 
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use("/api/auth", authRoutes);
 
-const users = [
-  { id: 1, name: 'Oliver Cruz'},
-  { id: 2, name: 'Fernando López'},
-  { id: 3, name: 'José José'},
-];
-app.get('/', (req, res) => {
-    res.send(users);
-}); 
+sequelize.authenticate()
+    .then(() => {
+        console.log("Database connection established successfully.");
+    })
+    .catch((error) => {
+        console.error("Database error:", error);
+    });
 
-//Para POST, se agregará un nuevo usuario
-app.post('/',(req, res)=>{
-    const newUser = req.body;
-    newUser.id = users.length + 1;
-    users.push(newUser);
-    res.status(201).json(newUser);
-});
-
-//Iniciar servidor 
-app.listen(3000, ()=>{
-    console.log("Servidor corriendo en localhost:3000") 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on localhost:${PORT}`);
 });

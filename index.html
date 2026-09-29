@@ -1,18 +1,60 @@
-<!doctype html>
-<html
-  lang="en-US"
-  dir="ltr"
-  class="redesign no-js"
-  data-ffo-opensanslight="false"
-  data-ffo-opensans="false">
-  <head prefix="og: http://ogp.me/ns#">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <script>
-      (function (d) {
-        d.className = d.className.replace(/\bno-js/, "");
-      })(document.documentElement);
-    </script>
-    ...
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel = "styleSheet" href = "styles.css">
+</head>
+<body>
+  <div class = "main-section">CMS JCFProgram</div>
+
+  <div id = "loginSection" class = "login-container">
+      <h2>Log in</h2>
+      <form id="loginForm">
+
+          <div class = "form-group">
+              <label for = "email">Email</label>
+              <input type = "email" id = "email" name = "email" required placeholder="yours@gmail.com">
+          </div>
+
+          <div class = "form-group">
+              <label for = "loginPassword">Password</label>
+              <input type = "password" id = "loginPassword" required placeholder="*********">            
+          </div>
+
+          <button type = "submit">Submit</button>
+      </form>
+      <p>Do not you have an account? <a href = "#" id = "showRegister">Sign in here</a></p>
+  </div>
+  
+  <!-- Register section-->
+  <div id = "registerSection" class = "register-container">
+    <h2>Register User</h2>
+    <form id = "registerForm">
+
+        <div class = "form-group"> 
+           <label for = "addName">Type name</label>
+           <input type = "text" id = "addName" required placeholder="Your name :D">
+        </div>
+
+         <div class = "form-group"> 
+           <label for = "addLastName">Type last name</label>
+           <input type = "text" id = "addLastName" required placeholder="Your last name :D">
+        </div>
+
+        <div class = "form-group">
+            <label for = "addEmail">Type your email</label>
+            <input type = "text" id = "addEmail" required placeholder="Your email please :D">
+        </div>
+
+      <div class = "form-group">
+          <label for = "addPassword">Type your password</label>
+          <input type = "text" id = "addPassword" required placeholder="*********">
+      </div>
+
+      <button type = "submit">Submit</button>
+    </form>
+    <p>If you already have an account <a href = "#" id = "showLogin">Log in here</a></p> 
+</body>
 </html>

@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(183, 213, 221);
+}
+.main-section{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: bisque;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-container{
+    background-color: antiquewhite;
+    padding: 20px;
+    text-align: center; 
+}
+
+.register-container{
+    background-color: rgb(255, 205, 233);
+    padding: 20px;
+    text-align: center;
+}
